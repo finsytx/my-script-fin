@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Lyrics with Audio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222;
+            color: white;
+            margin: 0;
+        }
+
+        .lyrics-container {
+            text-align: center;
+            width: 80%;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #f39c12;
+        }
+
+        p {
+            font-size: 1.5em;
+            transition: color 0.5s ease;
+        }
+
+        audio {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="lyrics-container">
+        <h1>My Favorite Song</h1>
+        <p id="line1">Just a small town girl, living in a lonely world</p>
+        <p id="line2">She took the midnight train going anywhere</p>
+        <p id="line3">Just a city boy, born and raised in south Detroit</p>
+        <p id="line4">He took the midnight train going anywhere</p>
+
+        <!-- Audio Player -->
+        <audio controls autoplay>
+            <source src="your-audio-file.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script>
+        // Array of colors for text animation
+        const colors = ["#f39c12", "#e74c3c", "#8e44ad", "#3498db"];
+        const lyrics = document.querySelectorAll(".lyrics-container p");
+
+        function changeColor() {
+            lyrics.forEach((line) => {
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                line.style.color = randomColor;
+            });
+        }
+
+        // Change color every second
+        setInterval(changeColor, 1000);
+    </script>
+</body>
+  </html>
+    
